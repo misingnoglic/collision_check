@@ -1,12 +1,14 @@
 from __future__ import division
-
 from random import SystemRandom
 import time
 from math import sqrt, ceil
 
 def check_collisions(N):
-    cryptogen = SystemRandom()
-    already_found = set([])
+    """
+    Function that keeps guessing random numbers 1 to N incluside, until it hits a collision (or doesn't)
+    """
+    cryptogen = SystemRandom() # OS Internal system for generating cryptographic random numbers
+    already_found = set([]) # Set of numbers the adversary already found
     iterations = 1
     start = time.time()
     try:
@@ -26,6 +28,7 @@ def check_collisions(N):
         onepercent = ntimes(.01,N)
         rate = total_time/iterations
         print "To have 1%% probability of guessing you need at least %d tries, at this rate it would take %f seconds" % (onepercent, onepercent*rate)
+        raise
             
             
 def coll(q,N):

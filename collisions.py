@@ -28,8 +28,9 @@ def check_collisions(upper_bound):
         print "The upper bound on getting a duplicate is %.2f %%" % (coll(iterations,upper_bound)*100)
         onepercent = ntimes(.01,upper_bound)
         rate = total_time/iterations
-        print "To have 1%% probability of guessing you need at least %d tries, at this rate it would take %f seconds" % (onepercent, onepercent*rate)
-        
+        seconds = onepercent*rate
+        print "To have 1%% probability of guessing you need at least %d tries, at this rate it would take %f seconds" % (onepercent, seconds)
+        print "%.2f minutes, %.2f hours, %.2f days, %.2f years" % (seconds/60, seconds/60/60, seconds/60/60/24, seconds/60/60/24/365)
             
             
 def coll(q,N):
